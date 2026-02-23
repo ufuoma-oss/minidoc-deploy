@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { MiniDocLogo } from '../icons/CustomIcons';
+import { MiniDocLogo3D } from '../icons/CustomIcons';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           onClick={() => onNavigate('home')}
         >
           <div className="relative -mt-2 transform transition-transform group-hover:scale-105 duration-300">
-            <MiniDocLogo size={44} />
+            <MiniDocLogo3D size={44} />
           </div>
           
           <span className="text-2xl font-logo font-bold text-gray-900 tracking-tight leading-none relative top-[1px]">

@@ -97,3 +97,50 @@ export const MiniDocLogo = ({ size = 44, className = "" }: { size?: number; clas
     <rect x="20" y="34" width="20" height="4" rx="2" fill="white"/>
   </svg>
 );
+
+export const MiniDocLogo3D = ({ size = 44, className = "" }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <defs>
+      <linearGradient id="logoGradient3D" x1="4" y1="10" x2="48" y2="42" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#2D2D2D"/>
+        <stop offset="50%" stopColor="#1A1A1A"/>
+        <stop offset="100%" stopColor="#0D0D0D"/>
+      </linearGradient>
+      <linearGradient id="logoSideGradient" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#3D3D3D"/>
+        <stop offset="100%" stopColor="#1A1A1A"/>
+      </linearGradient>
+      <linearGradient id="logoHighlight" x1="0" y1="0" x2="0" y2="100%" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#4A4A4A"/>
+        <stop offset="100%" stopColor="transparent"/>
+      </linearGradient>
+      <filter id="logoShadow3D" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="2" dy="3" stdDeviation="2" floodColor="#000000" floodOpacity="0.3"/>
+      </filter>
+    </defs>
+    
+    {/* 3D Back layer / depth effect */}
+    <path d="M16 16H6C6 22 10 26 16 26V16Z" fill="#0A0A0A" opacity="0.5"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M16 15C16 12.7909 17.7909 11 20 11H30C32.2091 11 34 12.7909 34 15V20H46C48.2091 20 50 21.7909 50 24V39C50 41.2091 48.2091 43 46 43H20C17.7909 43 16 41.2091 16 39V15Z" fill="#0A0A0A" opacity="0.4"/>
+    
+    {/* Main 3D shape with gradient */}
+    <g filter="url(#logoShadow3D)">
+      {/* Tab part */}
+      <path d="M14 15H4C4 21 8 25 14 25V15Z" fill="url(#logoSideGradient)"/>
+      
+      {/* Main folder body */}
+      <path fillRule="evenodd" clipRule="evenodd" d="M14 14C14 11.7909 15.7909 10 18 10H28C30.2091 10 32 11.7909 32 14V19H44C46.2091 19 48 20.7909 48 23V38C48 40.2091 46.2091 42 44 42H18C15.7909 42 14 40.2091 14 38V14Z" fill="url(#logoGradient3D)"/>
+      
+      {/* Highlight overlay for 3D effect */}
+      <path fillRule="evenodd" clipRule="evenodd" d="M14 14C14 11.7909 15.7909 10 18 10H28C30.2091 10 32 11.7909 32 14V19H44C46.2091 19 48 20.7909 48 23V38C48 40.2091 46.2091 42 44 42H18C15.7909 42 14 40.2091 14 38V14Z" fill="url(#logoHighlight)" opacity="0.3"/>
+    </g>
+    
+    {/* Document lines with subtle depth */}
+    <rect x="20" y="27" width="12" height="4" rx="2" fill="#E5E5E5"/>
+    <rect x="20" y="34" width="20" height="4" rx="2" fill="#E5E5E5"/>
+    
+    {/* Subtle inner shadow for depth */}
+    <rect x="20" y="27" width="12" height="4" rx="2" fill="#CCCCCC" opacity="0.5"/>
+    <rect x="20" y="34" width="20" height="4" rx="2" fill="#CCCCCC" opacity="0.5"/>
+  </svg>
+);
