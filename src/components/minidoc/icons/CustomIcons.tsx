@@ -89,6 +89,7 @@ export const ModernAppsIcon = ({ size = 20, className = "" }: { size?: number; c
   </svg>
 );
 
+// Original orange logo (kept for reference)
 export const MiniDocLogo = ({ size = 44, className = "" }: { size?: number; className?: string }) => (
   <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path d="M14 15H4C4 21 8 25 14 25V15Z" fill="#FF5A36"/>
@@ -98,52 +99,120 @@ export const MiniDocLogo = ({ size = 44, className = "" }: { size?: number; clas
   </svg>
 );
 
-export const MiniDocLogo3D = ({ size = 44, className = "" }: { size?: number; className?: string }) => (
-  <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <defs>
-      <linearGradient id="logoMainGradient" x1="4" y1="10" x2="48" y2="42" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#3D3D3D"/>
-        <stop offset="40%" stopColor="#1F1F1F"/>
-        <stop offset="100%" stopColor="#0A0A0A"/>
-      </linearGradient>
-      <linearGradient id="logoTabGradient" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#4A4A4A"/>
-        <stop offset="100%" stopColor="#2D2D2D"/>
-      </linearGradient>
-      <linearGradient id="logoHighlightGradient" x1="0" y1="0" x2="0" y2="100%" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="rgba(255,255,255,0.15)"/>
-        <stop offset="50%" stopColor="rgba(255,255,255,0.05)"/>
-        <stop offset="100%" stopColor="rgba(0,0,0,0)"/>
-      </linearGradient>
-      <filter id="logoDropShadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feDropShadow dx="1" dy="2" stdDeviation="1.5" floodColor="#000000" floodOpacity="0.35"/>
-      </filter>
-    </defs>
-    
-    {/* Shadow layer for depth */}
-    <g opacity="0.4">
-      <path d="M15 16H5C5 22 9 26 15 26V16Z" fill="#000000"/>
-      <path fillRule="evenodd" clipRule="evenodd" d="M15 15C15 12.7909 16.7909 11 19 11H29C31.2091 11 33 12.7909 33 15V20H45C47.2091 20 49 21.7909 49 24V39C49 41.2091 47.2091 43 45 43H19C16.7909 43 15 41.2091 15 39V15Z" fill="#000000"/>
-    </g>
-    
-    {/* Main logo group with shadow filter */}
-    <g filter="url(#logoDropShadow)">
-      {/* Tab part (the curved piece on left) */}
-      <path d="M14 15H4C4 21 8 25 14 25V15Z" fill="url(#logoTabGradient)"/>
+// Fun 3D Mockup Style Logo - Fancy, sweet, fun AI agent vibe
+export const MiniDocLogo3D = ({ size = 44, className = "", animated = false }: { size?: number; className?: string; animated?: boolean }) => {
+  const animationStyle = animated ? {
+    style: {
+      animation: 'logoFloat 3s ease-in-out infinite',
+    }
+  } : {};
+
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 48 48" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg" 
+      className={className}
+      {...animationStyle}
+    >
+      <defs>
+        {/* Main body gradient - sleek dark with depth */}
+        <linearGradient id="mainBodyGradient" x1="4" y1="8" x2="50" y2="45" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#3A3A3A"/>
+          <stop offset="30%" stopColor="#252525"/>
+          <stop offset="70%" stopColor="#151515"/>
+          <stop offset="100%" stopColor="#0A0A0A"/>
+        </linearGradient>
+        
+        {/* Tab gradient - slightly lighter for depth */}
+        <linearGradient id="tabGradient" x1="0" y1="12" x2="20" y2="28" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#505050"/>
+          <stop offset="50%" stopColor="#353535"/>
+          <stop offset="100%" stopColor="#252525"/>
+        </linearGradient>
+        
+        {/* Top highlight for 3D pop */}
+        <linearGradient id="topHighlight" x1="0" y1="8" x2="0" y2="25" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="rgba(255,255,255,0.25)"/>
+          <stop offset="40%" stopColor="rgba(255,255,255,0.08)"/>
+          <stop offset="100%" stopColor="rgba(0,0,0,0)"/>
+        </linearGradient>
+        
+        {/* Side shadow for depth */}
+        <linearGradient id="sideShadow" x1="48" y1="0" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="rgba(0,0,0,0.4)"/>
+          <stop offset="100%" stopColor="rgba(0,0,0,0)"/>
+        </linearGradient>
+        
+        {/* Document lines gradient */}
+        <linearGradient id="lineGradient" x1="20" y1="27" x2="40" y2="27" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#F0F0F0"/>
+          <stop offset="50%" stopColor="#FFFFFF"/>
+          <stop offset="100%" stopColor="#E5E5E5"/>
+        </linearGradient>
+        
+        {/* Drop shadow filter */}
+        <filter id="dropShadow3D" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="2" dy="4" stdDeviation="3" floodColor="#000000" floodOpacity="0.4"/>
+        </filter>
+        
+        {/* Inner glow for fun vibe */}
+        <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="1" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+      </defs>
       
-      {/* Main folder body */}
-      <path fillRule="evenodd" clipRule="evenodd" d="M14 14C14 11.7909 15.7909 10 18 10H28C30.2091 10 32 11.7909 32 14V19H44C46.2091 19 48 20.7909 48 23V38C48 40.2091 46.2091 42 44 42H18C15.7909 42 14 40.2091 14 38V14Z" fill="url(#logoMainGradient)"/>
+      {/* Background shadow layer for floating effect */}
+      <g opacity="0.3">
+        <path d="M15 16H5C5 22 9 26 15 26V16Z" fill="#000" transform="translate(2, 2)"/>
+        <path fillRule="evenodd" clipRule="evenodd" d="M15 15C15 12.7909 16.7909 11 19 11H29C31.2091 11 33 12.7909 33 15V20H45C47.2091 20 49 21.7909 49 24V39C49 41.2091 47.2091 43 45 43H19C16.7909 43 15 41.2091 15 39V15Z" fill="#000" transform="translate(2, 2)"/>
+      </g>
       
-      {/* Highlight overlay for 3D effect */}
-      <path fillRule="evenodd" clipRule="evenodd" d="M14 14C14 11.7909 15.7909 10 18 10H28C30.2091 10 32 11.7909 32 14V19H44C46.2091 19 48 20.7909 48 23V38C48 40.2091 46.2091 42 44 42H18C15.7909 42 14 40.2091 14 38V14Z" fill="url(#logoHighlightGradient)"/>
-    </g>
-    
-    {/* Document lines */}
-    <rect x="20" y="27" width="12" height="4" rx="2" fill="#E8E8E8"/>
-    <rect x="20" y="34" width="20" height="4" rx="2" fill="#E8E8E8"/>
-    
-    {/* Subtle inner shadow on lines for depth */}
-    <rect x="20" y="29" width="12" height="2" rx="1" fill="rgba(0,0,0,0.1)"/>
-    <rect x="20" y="36" width="20" height="2" rx="1" fill="rgba(0,0,0,0.1)"/>
-  </svg>
-);
+      {/* Main logo group with shadow */}
+      <g filter="url(#dropShadow3D)">
+        {/* Tab part (curved piece on left) */}
+        <path 
+          d="M14 15H4C4 21 8 25 14 25V15Z" 
+          fill="url(#tabGradient)"
+        />
+        
+        {/* Main folder body */}
+        <path 
+          fillRule="evenodd" 
+          clipRule="evenodd" 
+          d="M14 14C14 11.7909 15.7909 10 18 10H28C30.2091 10 32 11.7909 32 14V19H44C46.2091 19 48 20.7909 48 23V38C48 40.2091 46.2091 42 44 42H18C15.7909 42 14 40.2091 14 38V14Z" 
+          fill="url(#mainBodyGradient)"
+        />
+        
+        {/* Top highlight overlay */}
+        <path 
+          fillRule="evenodd" 
+          clipRule="evenodd" 
+          d="M14 14C14 11.7909 15.7909 10 18 10H28C30.2091 10 32 11.7909 32 14V19H44C46.2091 19 48 20.7909 48 23V38C48 40.2091 46.2091 42 44 42H18C15.7909 42 14 40.2091 14 38V14Z" 
+          fill="url(#topHighlight)"
+        />
+        
+        {/* Side shadow for depth */}
+        <path 
+          fillRule="evenodd" 
+          clipRule="evenodd" 
+          d="M14 14C14 11.7909 15.7909 10 18 10H28C30.2091 10 32 11.7909 32 14V19H44C46.2091 19 48 20.7909 48 23V38C48 40.2091 46.2091 42 44 42H18C15.7909 42 14 40.2091 14 38V14Z" 
+          fill="url(#sideShadow)"
+        />
+      </g>
+      
+      {/* Document lines with glow effect */}
+      <g filter="url(#innerGlow)">
+        <rect x="20" y="27" width="12" height="4" rx="2" fill="url(#lineGradient)"/>
+        <rect x="20" y="34" width="20" height="4" rx="2" fill="url(#lineGradient)"/>
+      </g>
+      
+      {/* Subtle shine sparkle for fun vibe */}
+      <circle cx="10" cy="18" r="1.5" fill="rgba(255,255,255,0.6)"/>
+      <circle cx="8" cy="20" r="0.8" fill="rgba(255,255,255,0.4)"/>
+    </svg>
+  );
+};

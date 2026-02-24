@@ -51,11 +51,11 @@ export const Header = ({ transition, onNavigate }: { transition: boolean; onNavi
             }}
           >
             <button 
-              className="flex items-center gap-2"
+              className="flex items-center gap-2.5"
               onClick={() => onNavigate?.('home')}
             >
               <Logo size="sm" />
-              <span className="text-lg font-semibold text-foreground">Mini Doc</span>
+              <span className="text-lg font-semibold text-foreground leading-none">Mini Doc</span>
             </button>
           </motion.div>
         ) : (

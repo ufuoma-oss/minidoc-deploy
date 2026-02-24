@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Tab, ChatSession, Document, SettingModalType } from '@/lib/minidoc/types';
-import { ModernAppsIcon, MiniDocLogo } from '../icons/CustomIcons';
+import { ModernAppsIcon, MiniDocLogo3D } from '../icons/CustomIcons';
 import { saveDocument } from '@/lib/minidoc/storage';
 import { APPS_DATA } from './AppIntegrationModal';
 
@@ -283,7 +283,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <MiniDocLogo size={28} />
+              <MiniDocLogo3D size={28} />
             </motion.div>
             <button 
               onClick={() => setIsSidebarOpen(false)} 

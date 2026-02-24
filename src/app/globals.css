@@ -525,3 +525,13 @@ button, a, [role="button"] {
   outline: none;
   box-shadow: none;
 }
+
+/* Logo floating animation */
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}

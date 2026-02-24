@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Mail, Lock, ArrowRight, ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import { motion } from 'motion/react';
 import { createSession } from '@/lib/minidoc/storage';
-import { MiniDocLogo } from '../icons/CustomIcons';
+import { MiniDocLogo3D } from '../icons/CustomIcons';
 
 interface SignInProps {
   onNavigate: (page: string) => void;
@@ -70,7 +70,7 @@ const SignIn: React.FC<SignInProps> = ({ onNavigate }) => {
 
           <div className="text-center mb-5">
             <div className="inline-flex items-center justify-center w-12 h-12 mb-3">
-              <MiniDocLogo size={48} />
+              <MiniDocLogo3D size={48} />
             </div>
             <h1 className="text-2xl font-medium text-black tracking-tight mb-1">
               {isSignUp ? 'Create account' : 'Welcome back'}
