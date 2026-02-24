@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 
-const TITLE = 'Your AI-powered document assistant';
-const SUBTITLE = 'Upload, chat, and understand your documents with AI';
+const TITLE = 'Turn your data into your personal AI agent';
+const SUBTITLE = 'Your paperwork, emails, data, and files are organized and managed by your AI to get real work done for you.';
 
 const apps = [
   { name: 'Gmail', logo: 'https://www.gstatic.com/images/branding/product/2x/gmail_2020q4_48dp.png' },
@@ -33,9 +33,9 @@ export const Hero = ({ onNavigate }: { onNavigate?: (page: string) => void }) =>
           <div className="mb-8 rounded-full bg-accent py-1 pl-1 pr-3 text-sm flex items-center gap-2">
             <span className="h-6 px-2 bg-primary text-xs text-primary-foreground rounded-full flex gap-1 items-center justify-center">
               <Sparkles className="w-3 h-3" />
-              AI Powered
+              Agent Mode
             </span>
-            <span className="text-muted-foreground">Chat with your files</span>
+            <span className="text-muted-foreground">Chat with your data</span>
           </div>
         </MotionEffect>
 
