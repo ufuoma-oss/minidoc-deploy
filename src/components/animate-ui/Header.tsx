@@ -2,9 +2,7 @@
 
 import { motion } from 'motion/react';
 import { Logo } from './Logo';
-import { useTheme } from 'next-themes';
 import { useSyncExternalStore } from 'react';
-import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const LOGO_WRAPPER_VARIANTS = {
@@ -30,7 +28,6 @@ const getSnapshot = () => true;
 const getServerSnapshot = () => false;
 
 export const Header = ({ transition, onNavigate }: { transition: boolean; onNavigate?: (page: string) => void }) => {
-  const { resolvedTheme, setTheme } = useTheme();
   const mounted = useSyncExternalStore(emptySubscribe, getSnapshot, getServerSnapshot);
 
   return (
@@ -89,20 +86,7 @@ export const Header = ({ transition, onNavigate }: { transition: boolean; onNavi
           transition={{ type: 'spring', stiffness: 200, damping: 30 }}
           className="absolute z-110 flex items-center gap-x-4"
         >
-          {mounted && (
-            <button
-              onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
-            >
-              {resolvedTheme === 'dark' ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-            </button>
-          )}
-          
-          {onNavigate && (
+          {mounted && onNavigate && (
             <Button
               onClick={() => onNavigate('signin')}
               size="sm"

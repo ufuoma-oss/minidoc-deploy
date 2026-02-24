@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Lock, ArrowRight, ArrowLeft, Eye, EyeOff } from 'lucide-react';
+import { Mail, ArrowRight, ArrowLeft } from 'lucide-react';
 import { motion } from 'motion/react';
 import { createSession } from '@/lib/minidoc/storage';
 import { MiniDocLogo3D } from '../icons/CustomIcons';
@@ -13,8 +13,6 @@ interface SignInProps {
 const SignIn: React.FC<SignInProps> = ({ onNavigate }) => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const performLogin = () => {
@@ -126,35 +124,6 @@ const SignIn: React.FC<SignInProps> = ({ onNavigate }) => {
                   className="block w-full pl-9 pr-3 py-2.5 border border-neutral-200 rounded-xl text-black placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition-all text-sm bg-white"
                   placeholder="name@example.com"
                 />
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <div className="flex justify-between items-center ml-1">
-                <label className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Password</label>
-                {!isSignUp && (
-                  <a href="#" className="text-[10px] font-medium text-neutral-500 hover:text-black">Forgot?</a>
-                )}
-              </div>
-              <div className="relative group">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock size={16} className="text-neutral-400 group-focus-within:text-black transition-colors" />
-                </div>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full pl-9 pr-9 py-2.5 border border-neutral-200 rounded-xl text-black placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition-all text-sm bg-white"
-                  placeholder="••••••••"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-neutral-400 hover:text-black cursor-pointer"
-                >
-                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
-                </button>
               </div>
             </div>
 

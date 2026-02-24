@@ -156,7 +156,7 @@ const TARGET_USE_CASES = [
   },
 ];
 
-export const Features = () => {
+export const Features = ({ onNavigate }: { onNavigate?: (page: string) => void }) => {
   return (
     <div className="relative pt-16 pb-10 px-5 flex flex-col items-center justify-center mt-auto">
       {/* Benefits Section */}
@@ -284,7 +284,7 @@ export const Features = () => {
           inView
         >
           <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-2">
-            Built for how you work
+            Use Cases
           </h2>
           <p className="text-muted-foreground text-center mb-10 max-w-xl mx-auto">
             Whatever your role, Mini Doc adapts to your workflow and solves real problems.
@@ -327,6 +327,28 @@ export const Features = () => {
             );
           })}
         </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="w-full max-w-5xl mx-auto mb-16">
+        <MotionEffect
+          slide={{ direction: 'up' }}
+          fade
+          zoom
+          inView
+        >
+          <div className="text-center">
+            <motion.button
+              onClick={() => onNavigate?.('signin')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-neutral-800 transition-colors text-lg"
+            >
+              Get Started Free
+              <Sparkles className="w-5 h-5" />
+            </motion.button>
+          </div>
+        </MotionEffect>
       </div>
     </div>
   );

@@ -78,7 +78,7 @@ export default function Home() {
                   <Hero key={String(transition)} onNavigate={handleNavigate} />
                 </motion.div>
 
-              <Features />
+              <Features onNavigate={handleNavigate} />
               </div>
 
               <Footer />
