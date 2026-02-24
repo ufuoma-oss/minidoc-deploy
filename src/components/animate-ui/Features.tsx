@@ -19,7 +19,6 @@ import {
   Target,
   Rocket,
   Users,
-  Briefcase
 } from 'lucide-react';
 
 const FEATURES = [
@@ -139,7 +138,8 @@ export const Features = () => {
                 slide={{ direction: 'down' }}
                 fade
                 zoom
-                delay={0.1 * index}
+                inView
+                delay={0.15 * index}
                 key={index}
               >
                 <motion.div
@@ -199,16 +199,24 @@ export const Features = () => {
               {MESSAGING_CHANNELS.map((channel, index) => {
                 const Icon = channel.icon;
                 return (
-                  <motion.div
+                  <MotionEffect
                     key={channel.name}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="flex flex-col items-center gap-2 cursor-pointer"
+                    slide={{ direction: 'up' }}
+                    fade
+                    zoom
+                    inView
+                    delay={0.2 * index}
                   >
-                    <div className="w-14 h-14 rounded-2xl bg-white dark:bg-neutral-700 shadow-lg flex items-center justify-center border border-border">
-                      <Icon className="w-7 h-7 text-foreground" />
-                    </div>
-                    <span className="text-xs font-medium text-muted-foreground">{channel.name}</span>
-                  </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="flex flex-col items-center gap-2 cursor-pointer"
+                    >
+                      <div className="w-14 h-14 rounded-2xl bg-white dark:bg-neutral-700 shadow-lg flex items-center justify-center border border-border">
+                        <Icon className="w-7 h-7 text-foreground" />
+                      </div>
+                      <span className="text-xs font-medium text-muted-foreground">{channel.name}</span>
+                    </motion.div>
+                  </MotionEffect>
                 );
               })}
             </div>
@@ -240,7 +248,8 @@ export const Features = () => {
                 slide={{ direction: 'down' }}
                 fade
                 zoom
-                delay={0.1 * index}
+                inView
+                delay={0.15 * index}
                 key={index}
               >
                 <motion.div
