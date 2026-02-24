@@ -47,15 +47,15 @@ export const Header = ({ transition, onNavigate }: { transition: boolean; onNavi
             layoutId="logo"
             className="absolute z-110 left-5"
             animate={{
-              top: 28,
+              top: 16,
             }}
           >
             <button 
-              className="flex items-center gap-2"
+              className="flex items-end gap-2"
               onClick={() => onNavigate?.('home')}
             >
               <Logo size="md" />
-              <span className="text-lg font-semibold text-foreground leading-none">Mini Doc</span>
+              <span className="text-lg font-semibold text-foreground leading-none pb-0.5">Mini Doc</span>
             </button>
           </motion.div>
         ) : (
@@ -69,19 +69,19 @@ export const Header = ({ transition, onNavigate }: { transition: boolean; onNavi
 
         <motion.div
           initial={{
-            top: 28,
+            top: 16,
             right: -43,
             opacity: 0,
           }}
           animate={
             transition
               ? {
-                  top: 28,
+                  top: 16,
                   right: 20,
                   opacity: 1,
                 }
               : {
-                  top: 28,
+                  top: 16,
                   right: -43,
                   opacity: 0,
                 }
