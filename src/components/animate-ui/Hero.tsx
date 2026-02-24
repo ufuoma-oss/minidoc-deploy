@@ -44,7 +44,6 @@ export const Hero = ({ onNavigate }: { onNavigate?: (page: string) => void }) =>
           slide={{ direction: 'down' }}
           fade
           zoom
-          inView
           delay={0.15}
         >
           <div className="relative z-10">
@@ -77,7 +76,6 @@ export const Hero = ({ onNavigate }: { onNavigate?: (page: string) => void }) =>
           slide={{ direction: 'down' }}
           fade
           zoom
-          inView
           delay={0.3}
         >
           <p className="block font-normal md:text-lg sm:text-base text-sm text-center mt-3 text-muted-foreground md:max-w-[660px] sm:max-w-[450px] text-balance">
