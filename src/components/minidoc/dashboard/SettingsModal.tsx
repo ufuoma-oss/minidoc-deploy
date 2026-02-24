@@ -13,10 +13,10 @@ interface SettingsModalProps {
 }
 
 const faqs = [
-  { question: 'How secure is my data?', answer: 'Your data is encrypted, private, and strictly isolated. We do not use your personal documents or emails to train our public AI models.' },
-  { question: 'What files and apps work?', answer: 'You can upload PDFs, Word docs, and images. You can also connect Gmail, Google Drive, and Outlook to let the AI organize your digital life.' },
-  { question: 'Can I cancel anytime?', answer: 'Yes. You can cancel your subscription instantly in the "Billing & Plan" tab. You will keep access until the end of your billing period.' },
-  { question: 'Does the AI send emails for me?', answer: 'Not automatically. The AI will draft emails or calendar invites for you, but it requires your manual confirmation before sending anything.' },
+  { question: 'How secure is my data?', answer: 'Your data is encrypted, isolated to your account, and never used to train public AI models. What\'s yours stays yours.' },
+  { question: 'What can I upload?', answer: 'Upload any document, file, or screenshot. Connect Gmail, Drive, Outlook, and more to sync everything into your smart digital library.' },
+  { question: 'How does reference-based retrieval work?', answer: 'Ask your AI agent by date, name, occasion, or any reference. For example: "Find the contract from March" or "What did John send about the project?"' },
+  { question: 'Can I cancel anytime?', answer: 'Yes. Cancel instantly from the "Billing & Plan" tab. You\'ll keep access until the end of your billing period.' },
 ];
 
 const SettingsModal: React.FC<SettingsModalProps> = ({ type, onClose, onLogout }) => {

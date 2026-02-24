@@ -15,36 +15,36 @@ import {
   MessageSquare,
   Mail,
   Smartphone,
-  Workflow,
-  Target,
-  Rocket,
-  Users,
+  Upload,
+  Database,
+  Clock,
+  Sparkles,
 } from 'lucide-react';
 
 const FEATURES = [
   {
-    title: 'Deep Document Intelligence',
-    description: 'Reads and understands PDFs, slides, contracts, and emails instantly.',
-    icon: Brain,
+    title: 'Smart Digital Library',
+    description: 'Upload docs, work files, screenshots — any data you want your AI to access. All in one place.',
+    icon: Database,
     color: 'from-violet-500 to-purple-600',
   },
   {
-    title: 'Smart Cross-Platform Search',
-    description: 'Find anything across all your files — wherever it lives.',
-    icon: Search,
-    color: 'from-blue-500 to-cyan-500',
+    title: 'Deep Document Intelligence',
+    description: 'Reads and understands PDFs, slides, contracts, and emails instantly.',
+    icon: Brain,
+    color: 'from-blue-500 to-indigo-600',
   },
   {
-    title: 'Multi-Platform Integration',
-    description: 'Connects to your apps and operates across them as one unified workspace.',
+    title: 'Reference-Based Retrieval',
+    description: 'Pull info by date, name, occasion, or any reference point from your digital library.',
+    icon: Clock,
+    color: 'from-cyan-500 to-teal-500',
+  },
+  {
+    title: 'Multi-Platform Sync',
+    description: 'Connect Gmail, Drive, and more. Sync everything into one unified AI workspace.',
     icon: Link2,
     color: 'from-green-500 to-emerald-500',
-  },
-  {
-    title: 'Real-Time Research & Browsing',
-    description: 'Pulls live information and augments your data with up-to-date insights.',
-    icon: Zap,
-    color: 'from-orange-500 to-amber-500',
   },
   {
     title: 'Context Awareness',
@@ -54,7 +54,7 @@ const FEATURES = [
   },
   {
     title: 'PDF & Slide Creation',
-    description: 'Generates polished documents and presentations in seconds.',
+    description: 'Generate polished documents and presentations in seconds.',
     icon: FileText,
     color: 'from-red-500 to-orange-500',
   },
@@ -62,19 +62,19 @@ const FEATURES = [
     title: 'Instant Insights',
     description: 'Summaries, key points, action items — automatically extracted for you.',
     icon: Lightbulb,
-    color: 'from-yellow-500 to-orange-500',
-  },
-  {
-    title: 'Secure by Design',
-    description: 'Encrypted storage. Private by default. Your data stays yours.',
-    icon: Shield,
-    color: 'from-slate-500 to-zinc-600',
+    color: 'from-yellow-500 to-amber-500',
   },
   {
     title: 'Email Management',
     description: 'Read, draft, summarize, and organize your inbox with AI assistance.',
     icon: Mail,
     color: 'from-sky-500 to-blue-600',
+  },
+  {
+    title: 'Secure by Design',
+    description: 'Encrypted storage. Private by default. Your data stays yours.',
+    icon: Shield,
+    color: 'from-slate-500 to-zinc-600',
   },
 ];
 
@@ -86,28 +86,22 @@ const MESSAGING_CHANNELS = [
 
 const USE_CASES = [
   {
-    title: 'Research & Analysis',
-    description: 'Upload research papers, reports, and data. Get instant summaries, comparisons, and insights.',
-    icon: Target,
+    title: 'Upload Your Data',
+    description: 'Add docs, work files, screenshots, or any data you want your AI to have access to.',
+    icon: Upload,
     step: '1',
   },
   {
-    title: 'Document Workflow',
-    description: 'From messy files to polished outputs — create docs, slides, and summaries automatically.',
-    icon: Workflow,
+    title: 'Connect Your Apps',
+    description: 'Link Gmail, Drive, and other platforms. Sync everything to one smart library.',
+    icon: Link2,
     step: '2',
   },
   {
-    title: 'Team Collaboration',
-    description: 'Share knowledge across your team. Everyone gets answers from the same source of truth.',
-    icon: Users,
+    title: 'Ask Anything',
+    description: 'Your AI agent pulls info based on date, name, occasion — any reference you need.',
+    icon: Sparkles,
     step: '3',
-  },
-  {
-    title: 'Get Work Done',
-    description: 'Your AI agent handles the busywork so you focus on what matters most.',
-    icon: Rocket,
-    step: '4',
   },
 ];
 
@@ -236,11 +230,11 @@ export const Features = () => {
             How it works
           </h2>
           <p className="text-muted-foreground text-center mb-10 max-w-xl mx-auto">
-            From data overload to getting things done — in four simple steps.
+            Three simple steps to your personal AI agent.
           </p>
         </MotionEffect>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {USE_CASES.map((useCase, index) => {
             const Icon = useCase.icon;
             return (
